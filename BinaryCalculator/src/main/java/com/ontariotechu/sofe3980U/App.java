@@ -1,4 +1,5 @@
 package com.ontariotechu.sofe3980U;
+import org.joda.time.LocalTime;
 
 /**
  * Hello world!
@@ -13,6 +14,8 @@ public class App
      */
     public static void main( String[] args )
     {
+        LocalTime currentTime = new LocalTime();
+        System.out.println("THe new current time is: " + currentTime);
         Binary binary1=new Binary("00010001000");
         System.out.println( "First binary number is "+binary1.getValue());
         Binary binary2=new Binary("111000");

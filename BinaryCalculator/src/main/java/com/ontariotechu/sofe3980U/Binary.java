@@ -1,5 +1,6 @@
 package com.ontariotechu.sofe3980U;
 
+
 /**
  * Unsigned integer Binary variable
  *
