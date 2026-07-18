@@ -152,4 +152,31 @@ public class Binary
 
         return new Binary(result);
     }
+
+    /**
+     * Multiplies two binary variables using binary shift-and-add.
+     *
+     * @param num1 the first binary number
+     * @param num2 the second binary number
+     * @return a Binary object containing num1 multiplied by num2
+     */
+    public static Binary multiply(Binary num1, Binary num2)
+    {
+        Binary result = new Binary("0");
+        String shiftedNumber = num1.number;
+
+        // Process the second number from right to left
+        for (int i = num2.number.length() - 1; i >= 0; i--)
+        {
+            if (num2.number.charAt(i) == '1')
+            {
+                result = Binary.add(result, new Binary(shiftedNumber));
+            }
+
+            // Left shift by one position, equivalent to multiplying by 2
+            shiftedNumber = shiftedNumber + "0";
+        }
+
+        return result;
+    }
 }

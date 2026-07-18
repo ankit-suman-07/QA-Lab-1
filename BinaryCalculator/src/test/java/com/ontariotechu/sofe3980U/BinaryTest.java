@@ -245,58 +245,75 @@ public class BinaryTest
     }
 
     /**
-     * Test The add functions with two binary numbers of the same length
+     * Tests multiplication with two binary numbers.
+     * 1000 (8) × 1111 (15) = 1111000 (120)
      */
     @Test
     public void testBinaryMultiplication()
     {
-        Binary binary1=new Binary("1000");
-        Binary binary2=new Binary("1111");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("10111"));
+        Binary binary1 = new Binary("1000");
+        Binary binary2 = new Binary("1111");
+
+        Binary result = Binary.multiply(binary1, binary2);
+
+        assertTrue(result.getValue().equals("1111000"));
     }
+
     /**
-     * Test The add functions with two binary numbers, the length of the first argument is less than the second
+     * Tests multiplication when the first number is longer.
+     * 1010 (10) × 11 (3) = 11110 (30)
      */
     @Test
     public void testBinaryMultiplication2()
     {
-        Binary binary1=new Binary("1010");
-        Binary binary2=new Binary("11");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("1101"));
+        Binary binary1 = new Binary("1010");
+        Binary binary2 = new Binary("11");
+
+        Binary result = Binary.multiply(binary1, binary2);
+
+        assertTrue(result.getValue().equals("11110"));
     }
+
     /**
-     * Test The add functions with two binary numbers, the length of the first argument is greater than the second
+     * Tests multiplication when the second number is longer.
+     * 11 (3) × 1010 (10) = 11110 (30)
      */
     @Test
     public void testBinaryMultiplication3()
     {
-        Binary binary1=new Binary("11");
-        Binary binary2=new Binary("1010");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("1101"));
+        Binary binary1 = new Binary("11");
+        Binary binary2 = new Binary("1010");
+
+        Binary result = Binary.multiply(binary1, binary2);
+
+        assertTrue(result.getValue().equals("11110"));
     }
+
     /**
-     * Test The add functions with a binary numbers with zero
+     * Tests multiplication by zero.
      */
     @Test
     public void testBinaryMultiplication4()
     {
-        Binary binary1=new Binary("0");
-        Binary binary2=new Binary("1010");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("1010"));
+        Binary binary1 = new Binary("0");
+        Binary binary2 = new Binary("1010");
+
+        Binary result = Binary.multiply(binary1, binary2);
+
+        assertTrue(result.getValue().equals("0"));
     }
+
     /**
-     * Test The add functions with two zeros
+     * Tests multiplication of two zeros.
      */
     @Test
     public void testBinaryMultiplication5()
     {
-        Binary binary1=new Binary("0");
-        Binary binary2=new Binary("0");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("0"));
+        Binary binary1 = new Binary("0");
+        Binary binary2 = new Binary("0");
+
+        Binary result = Binary.multiply(binary1, binary2);
+
+        assertTrue(result.getValue().equals("0"));
     }
 }
