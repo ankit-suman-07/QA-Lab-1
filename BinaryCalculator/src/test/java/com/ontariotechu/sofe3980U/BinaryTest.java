@@ -119,116 +119,129 @@ public class BinaryTest
         assertTrue( binary3.getValue().equals("0"));
     }
 
-    /**
-     * Test The add functions with two binary numbers of the same length
-     */
     @Test
     public void testBinaryOR()
     {
-        Binary binary1=new Binary("1000");
-        Binary binary2=new Binary("1111");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("1111"));
+        Binary binary1 = new Binary("1000");
+        Binary binary2 = new Binary("1111");
+
+        Binary result = Binary.or(binary1, binary2);
+
+        assertTrue(result.getValue().equals("1111"));
     }
-    /**
-     * Test The add functions with two binary numbers, the length of the first argument is less than the second
-     */
+
     @Test
     public void testBinaryOR2()
     {
-        Binary binary1=new Binary("1010");
-        Binary binary2=new Binary("11");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("1011"));
+        Binary binary1 = new Binary("1010");
+        Binary binary2 = new Binary("11");
+
+        Binary result = Binary.or(binary1, binary2);
+
+        assertTrue(result.getValue().equals("1011"));
     }
-    /**
-     * Test The add functions with two binary numbers, the length of the first argument is greater than the second
-     */
+
     @Test
     public void testBinaryOR3()
     {
-        Binary binary1=new Binary("11");
-        Binary binary2=new Binary("1010");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("1011"));
+        Binary binary1 = new Binary("11");
+        Binary binary2 = new Binary("1010");
+
+        Binary result = Binary.or(binary1, binary2);
+
+        assertTrue(result.getValue().equals("1011"));
     }
-    /**
-     * Test The add functions with a binary numbers with zero
-     */
+
     @Test
     public void testBinaryOR4()
     {
-        Binary binary1=new Binary("0");
-        Binary binary2=new Binary("1010");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("1010"));
+        Binary binary1 = new Binary("0");
+        Binary binary2 = new Binary("1010");
+
+        Binary result = Binary.or(binary1, binary2);
+
+        assertTrue(result.getValue().equals("1010"));
     }
-    /**
-     * Test The add functions with two zeros
-     */
+
     @Test
     public void testBinaryOR5()
     {
-        Binary binary1=new Binary("0");
-        Binary binary2=new Binary("0");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("0"));
+        Binary binary1 = new Binary("0");
+        Binary binary2 = new Binary("0");
+
+        Binary result = Binary.or(binary1, binary2);
+
+        assertTrue(result.getValue().equals("0"));
     }
 
     /**
-     * Test The add functions with two binary numbers of the same length
+     * Tests AND with two binary numbers of the same length.
      */
     @Test
     public void testBinaryAND()
     {
-        Binary binary1=new Binary("1000");
-        Binary binary2=new Binary("1111");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("10000"));
+        Binary binary1 = new Binary("1000");
+        Binary binary2 = new Binary("1111");
+
+        Binary result = Binary.and(binary1, binary2);
+
+        assertTrue(result.getValue().equals("1000"));
     }
+
     /**
-     * Test The add functions with two binary numbers, the length of the first argument is less than the second
+     * Tests AND when the first binary number is longer.
      */
     @Test
     public void testBinaryAND2()
     {
-        Binary binary1=new Binary("1010");
-        Binary binary2=new Binary("11");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("0010"));
+        Binary binary1 = new Binary("1010");
+        Binary binary2 = new Binary("11");
+
+        Binary result = Binary.and(binary1, binary2);
+
+        assertTrue(result.getValue().equals("10"));
     }
+
     /**
-     * Test The add functions with two binary numbers, the length of the first argument is greater than the second
+     * Tests AND when the second binary number is longer.
      */
     @Test
     public void testBinaryAND3()
     {
-        Binary binary1=new Binary("11");
-        Binary binary2=new Binary("1010");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("0010"));
+        Binary binary1 = new Binary("11");
+        Binary binary2 = new Binary("1010");
+
+        Binary result = Binary.and(binary1, binary2);
+
+        assertTrue(result.getValue().equals("10"));
     }
+
     /**
-     * Test The add functions with a binary numbers with zero
+     * Tests AND with zero.
      */
     @Test
     public void testBinaryAND4()
     {
-        Binary binary1=new Binary("0");
-        Binary binary2=new Binary("1010");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("0000"));
+        Binary binary1 = new Binary("0");
+        Binary binary2 = new Binary("1010");
+
+        Binary result = Binary.and(binary1, binary2);
+
+        assertTrue(result.getValue().equals("0"));
     }
+
     /**
-     * Test The add functions with two zeros
+     * Tests AND with two zeros.
      */
     @Test
     public void testBinaryAND5()
     {
-        Binary binary1=new Binary("0");
-        Binary binary2=new Binary("0");
-        Binary binary3=Binary.add(binary1,binary2);
-        assertTrue( binary3.getValue().equals("0"));
+        Binary binary1 = new Binary("0");
+        Binary binary2 = new Binary("0");
+
+        Binary result = Binary.and(binary1, binary2);
+
+        assertTrue(result.getValue().equals("0"));
     }
 
     /**

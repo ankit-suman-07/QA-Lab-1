@@ -89,4 +89,67 @@ public class Binary
         return result;
 
     }
+
+    /**
+     * Performs a bitwise OR operation on two binary variables.
+     *
+     * @param num1 the first binary number
+     * @param num2 the second binary number
+     * @return a Binary object containing num1 OR num2
+     */
+    public static Binary or(Binary num1, Binary num2)
+    {
+        int ind1 = num1.number.length() - 1;
+        int ind2 = num2.number.length() - 1;
+
+        String result = "";
+
+        // Process both numbers from right to left
+        while (ind1 >= 0 || ind2 >= 0)
+        {
+            char bit1 = (ind1 >= 0) ? num1.number.charAt(ind1) : '0';
+            char bit2 = (ind2 >= 0) ? num2.number.charAt(ind2) : '0';
+
+            // OR produces 1 if either bit is 1
+            char resultBit = (bit1 == '1' || bit2 == '1') ? '1' : '0';
+
+            result = resultBit + result;
+
+            ind1--;
+            ind2--;
+        }
+
+        return new Binary(result);
+    }
+
+    /**
+     * Performs a bitwise AND operation on two binary variables.
+     *
+     * @param num1 the first binary number
+     * @param num2 the second binary number
+     * @return a Binary object containing num1 AND num2
+     */
+    public static Binary and(Binary num1, Binary num2)
+    {
+        int ind1 = num1.number.length() - 1;
+        int ind2 = num2.number.length() - 1;
+
+        String result = "";
+
+        while (ind1 >= 0 || ind2 >= 0)
+        {
+            char bit1 = (ind1 >= 0) ? num1.number.charAt(ind1) : '0';
+            char bit2 = (ind2 >= 0) ? num2.number.charAt(ind2) : '0';
+
+            // AND produces 1 only when both bits are 1
+            char resultBit = (bit1 == '1' && bit2 == '1') ? '1' : '0';
+
+            result = resultBit + result;
+
+            ind1--;
+            ind2--;
+        }
+
+        return new Binary(result);
+    }
 }
